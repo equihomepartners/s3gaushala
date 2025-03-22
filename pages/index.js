@@ -137,14 +137,19 @@ export default function Home({ content }) {
       videoElement: videoRef.current,
       networkState: videoRef.current?.networkState,
       readyState: videoRef.current?.readyState,
-      error: videoRef.current?.error
+      error: videoRef.current?.error,
+      src: videoRef.current?.currentSrc || videoRef.current?.src
     });
     setIsVideoPlaying(false);
     setVideoError(true);
   };
 
   const handleVideoLoadedData = () => {
-    console.log("Video data loaded successfully");
+    console.log("Video data loaded successfully", {
+      src: videoRef.current?.currentSrc || videoRef.current?.src,
+      duration: videoRef.current?.duration,
+      readyState: videoRef.current?.readyState
+    });
     setIsVideoLoaded(true);
     if (videoRef.current) {
       videoRef.current.play().catch(error => {
@@ -155,13 +160,25 @@ export default function Home({ content }) {
   };
 
   const handleVideoLoadStart = () => {
-    console.log("Video load started");
+    console.log("Video load started", {
+      src: videoRef.current?.currentSrc || videoRef.current?.src
+    });
     setVideoError(false);
   };
 
   const handleVideoWaiting = () => {
     console.log("Video is waiting for data");
   };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      console.log("Video element mounted", {
+        src: videoRef.current?.currentSrc || videoRef.current?.src,
+        networkState: videoRef.current?.networkState,
+        readyState: videoRef.current?.readyState
+      });
+    }
+  }, []);
 
   return (
     <Box 
@@ -209,30 +226,58 @@ export default function Home({ content }) {
               bg="black"
             >
               {!videoError && (
-                <video
-                  ref={videoRef}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  onPlay={handleVideoPlay}
-                  onError={handleVideoError}
-                  onLoadedData={handleVideoLoadedData}
-                  onLoadStart={handleVideoLoadStart}
-                  onWaiting={handleVideoWaiting}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    filter: 'brightness(0.8)',
-                  }}
+                <Box
+                  position="absolute"
+                  top={0}
+                  left={0}
+                  right={0}
+                  bottom={0}
+                  zIndex={0}
+                  overflow="hidden"
+                  bg="black"
                 >
-                  <source 
-                    src="/videos/BGVideo3.mp4" 
-                    type="video/mp4" 
+                  <Image
+                    src="/images/hero-placeholder.jpg"
+                    alt="Hero background"
+                    position="absolute"
+                    top={0}
+                    left={0}
+                    width="100%"
+                    height="100%"
+                    objectFit="cover"
+                    filter="brightness(0.8)"
+                    style={{ opacity: isVideoPlaying ? 0 : 1 }}
+                    transition="opacity 0.5s ease"
                   />
-                </video>
+                  <video
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      filter: 'brightness(0.8)',
+                      opacity: isVideoPlaying ? 1 : 0,
+                      transition: 'opacity 0.5s ease',
+                    }}
+                    poster="/images/hero-placeholder.jpg"
+                    onPlay={handleVideoPlay}
+                    onError={handleVideoError}
+                    onLoadedData={handleVideoLoadedData}
+                    onLoadStart={handleVideoLoadStart}
+                    onWaiting={handleVideoWaiting}
+                  >
+                    <source 
+                      src="/videos/BGVideo3.mp4" 
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </Box>
               )}
 
               {/* Show fallback image when video fails or hasn't started playing */}

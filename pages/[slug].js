@@ -1,8 +1,9 @@
-import { Box, Container, Heading, Text, VStack, Image, SimpleGrid } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, SimpleGrid } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { getPageContent, getAllSlugs } from '../utils/content';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function DynamicPage({ content }) {
   const router = useRouter();
@@ -45,14 +46,14 @@ export default function DynamicPage({ content }) {
             {images.length > 0 && (
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
                 {images.map((image, index) => (
-                  <Image
+                  <OptimizedImage
                     key={index}
                     src={image.src}
                     alt={image.alt || ''}
+                    height="300px"
+                    width="100%"
                     borderRadius="lg"
                     objectFit="cover"
-                    height="300px"
-                    fallbackSrc="/images/placeholder.jpg"
                   />
                 ))}
               </SimpleGrid>
