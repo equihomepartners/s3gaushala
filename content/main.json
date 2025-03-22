@@ -1,0 +1,368 @@
+{
+  "title": "S3 Gaushala - Sacred Cow Sanctuary",
+  "navigation": [
+    {
+      "text": "Home",
+      "href": "/"
+    },
+    {
+      "text": "About Us",
+      "href": "/about-us"
+    },
+    {
+      "text": "S3 Foundation",
+      "href": "/s3-foundation"
+    },
+    {
+      "text": "Events",
+      "href": "/events"
+    },
+    {
+      "text": "Gallery",
+      "href": "/gallery"
+    },
+    {
+      "text": "Blog",
+      "href": "/blog"
+    },
+    {
+      "text": "Volunteer",
+      "href": "/volunteer"
+    },
+    {
+      "text": "Contact Us",
+      "href": "/contact-us"
+    },
+    {
+      "text": "Donate",
+      "href": "/donate"
+    },
+    {
+      "text": "Shop",
+      "href": "/shop"
+    }
+  ],
+  "hero": {
+    "title": "Serving & Protecting Sacred Cows",
+    "subtitle": "गौ सेवा परमो धर्मः (Serving Cows is the Highest Dharma)",
+    "description": "A sacred space dedicated to the protection and veneration of Desi cows, preserving ancient traditions and spiritual wisdom"
+  },
+  "mainContent": {
+    "stats": [
+      {
+        "value": "200+",
+        "label": "Desi Cows Under Protection"
+      },
+      {
+        "value": "5+",
+        "label": "Years of Seva"
+      },
+      {
+        "value": "Daily",
+        "label": "Sacred Care & Rituals"
+      }
+    ],
+    "sections": [
+      {
+        "title": "S3 Gaushala",
+        "content": "A sanctuary rooted in the timeless Hindu tradition of cow protection and veneration, operating as a wing of the 501(c)3 non-profit S3 Foundation",
+        "features": [
+          {
+            "title": "Sacred Heritage",
+            "description": "Home to over 200 desi cows, preserving the divine connection between humans and these sacred beings",
+            "icon": "FaPrayingHands"
+          },
+          {
+            "title": "Spiritual Sanctuary",
+            "description": "The first traditional Gaushala of its kind in America, maintaining authentic Vedic practices",
+            "icon": "FaOm"
+          },
+          {
+            "title": "Community Service",
+            "description": "Five years of dedicated seva in Memphis, TN, fostering spiritual growth and community harmony",
+            "icon": "FaHandsHelping"
+          }
+        ]
+      },
+      {
+        "title": "Seva Opportunities",
+        "content": "Join us in the sacred service of Gau Mata through various forms of seva",
+        "options": [
+          {
+            "title": "Daily Care",
+            "description": "Participate in the daily care and feeding of our sacred cows, an act of profound spiritual significance in Hindu tradition",
+            "icon": "FaHeart",
+            "link": "/seva"
+          },
+          {
+            "title": "Cow Sponsorship",
+            "description": "Form a spiritual connection by sponsoring a cow, participating in their lifelong care and protection",
+            "icon": "FaPrayingHands",
+            "link": "/sponsor"
+          },
+          {
+            "title": "Visit & Connect",
+            "description": "Experience the divine presence of Gau Mata and participate in traditional rituals and feeding ceremonies",
+            "icon": "FaOm",
+            "link": "/visit"
+          }
+        ]
+      },
+      {
+        "title": "Sacred Care",
+        "content": "Our cows receive care following traditional principles and modern best practices",
+        "items": [
+          {
+            "name": "Traditional Feed",
+            "description": "Fresh hay and natural feed components selected according to Ayurvedic principles for the optimal health and wellbeing of our sacred cows",
+            "image": "/images/hay-bales.jpg"
+          },
+          {
+            "name": "Balanced Nutrition",
+            "description": "Carefully formulated feed incorporating traditional wisdom and modern nutritional science to ensure the health of our divine mothers",
+            "image": "/images/pellet-feed.jpg"
+          }
+        ]
+      },
+      {
+        "title": "Join Our Seva",
+        "content": "Become part of our spiritual family by participating in the sacred service of Gau Mata. Experience the divine blessings that come from serving these sacred beings. Visiting hours: Saturday 10 AM - 3 PM CST"
+      },
+      {
+        "title": "Connect With Us",
+        "content": "Reach out to learn more about our sanctuary and how you can participate in this sacred seva",
+        "address": "7915 Deadfall Road, Arlington, TN, 38002",
+        "phone": "+1 (901) 352-0047",
+        "email": "info@gaushalausa.org",
+        "taxId": "EIN: 47-2455521"
+      }
+    ]
+  },
+  "images": [],
+  "text": [
+    {
+      "type": "h1",
+      "content": "The Home of Desi Cows in America"
+    },
+    {
+      "type": "p",
+      "content": "S3 Gaushala"
+    },
+    {
+      "type": "p",
+      "content": "A Cow Sanctuary dedicated to protecting and improving the lives of cows in our community and beyond"
+    },
+    {
+      "type": "p",
+      "content": "Welcome to the S3 Gaushala"
+    },
+    {
+      "type": "p",
+      "content": "A wing of the 501(c)3 non-profit organization, S3 Foundation"
+    },
+    {
+      "type": "h3",
+      "content": "There are over 200 desi cows, the largest such cow sanctuary in America"
+    },
+    {
+      "type": "h3",
+      "content": "The first ever cow sanctuary of its kind in America"
+    },
+    {
+      "type": "h4",
+      "content": "Providing sanctuary for cows for 5 years in Memphis, TN"
+    },
+    {
+      "type": "h2",
+      "content": "On Vasanta Panchami"
+    },
+    {
+      "type": "h2",
+      "content": "S3 Gaushala Lauched"
+    },
+    {
+      "type": "p",
+      "content": "NOURISH TO FLOURISH"
+    },
+    {
+      "type": "h3",
+      "content": "Hay Bales"
+    },
+    {
+      "type": "h3",
+      "content": "Hay Bales"
+    },
+    {
+      "type": "h3",
+      "content": "Pellet Feed"
+    },
+    {
+      "type": "h3",
+      "content": "Pellet Feed"
+    },
+    {
+      "type": "p",
+      "content": "Celebrate your special occasions by sponsoring a day of nourishment for 200 cows with a $351 donation!"
+    },
+    {
+      "type": "h2",
+      "content": "Sponsor a day of cow feed for our 200 Gir cow family"
+    },
+    {
+      "type": "h2",
+      "content": "Support Daily Feed"
+    },
+    {
+      "type": "p",
+      "content": "Providing the feed for 200+ cows is possible due to our grassroots community support on a sustained monthly basis. Please consider donating to support all our cows!"
+    },
+    {
+      "type": "h2",
+      "content": "Sponsor Your Cow"
+    },
+    {
+      "type": "p",
+      "content": "Your commitment to adopt a cow means you are providing the necessary care for a cow. You will also be able to name the cow that you adopt. Please contact us for more information!"
+    },
+    {
+      "type": "h2",
+      "content": "Meet & Feed Cows"
+    },
+    {
+      "type": "p",
+      "content": "Come visit the Gaushala to feed the cows and enjoy an experience like no other while connecting to the environment and giving back to the community."
+    },
+    {
+      "type": "h3",
+      "content": "Support Daily Feed"
+    },
+    {
+      "type": "p",
+      "content": "Providing the feed for 200+ cows is possible due to our grassroots community support on a sustained monthly basis. Please consider donating to support all our cows!"
+    },
+    {
+      "type": "h3",
+      "content": "Sponsor Your Cow"
+    },
+    {
+      "type": "p",
+      "content": "Your commitment to adopt a cow means you are providing the necessary care for a cow. You will also be able to name the cow that you adopt. Please contact us for more information!"
+    },
+    {
+      "type": "h3",
+      "content": "Meet & Feed Cows"
+    },
+    {
+      "type": "p",
+      "content": "Come visit the Gaushala to feed the cows and enjoy an experience like no other while connecting to the environment and giving back to the community."
+    },
+    {
+      "type": "h3",
+      "content": "Products Range"
+    },
+    {
+      "type": "p",
+      "content": "Felis bibendum ut tristique et egestas quis. Risus nullam eget felis eget."
+    },
+    {
+      "type": "h3",
+      "content": "Quality Matters"
+    },
+    {
+      "type": "p",
+      "content": "Felis bibendum ut tristique et egestas quis. Risus nullam eget felis eget."
+    },
+    {
+      "type": "h3",
+      "content": "Customer Satisfaction"
+    },
+    {
+      "type": "p",
+      "content": "Felis bibendum ut tristique et egestas quis. Risus nullam eget felis eget."
+    },
+    {
+      "type": "h3",
+      "content": "Free Shipping"
+    },
+    {
+      "type": "p",
+      "content": "Felis bibendum ut tristique et egestas quis. Risus nullam eget felis eget."
+    },
+    {
+      "type": "h2",
+      "content": "High-quality eggs"
+    },
+    {
+      "type": "p",
+      "content": "Our numbers prove the constant improvement in the quality of our products"
+    },
+    {
+      "type": "p",
+      "content": "Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+    },
+    {
+      "type": "h2",
+      "content": "Our gallery"
+    },
+    {
+      "type": "p",
+      "content": "Get to know our farm"
+    },
+    {
+      "type": "h2",
+      "content": "Our Blog"
+    },
+    {
+      "type": "p",
+      "content": "Latest Blog Posts"
+    },
+    {
+      "type": "h3",
+      "content": "Why Gau Seva?"
+    },
+    {
+      "type": "h3",
+      "content": "Cow – The Worshipable Animal"
+    },
+    {
+      "type": "h3",
+      "content": "Sadhbuddhi: Become more happy and"
+    },
+    {
+      "type": "p",
+      "content": "Many people wonder why do we have to serve Gau..."
+    },
+    {
+      "type": "h3",
+      "content": "For Updates:"
+    },
+    {
+      "type": "p",
+      "content": "Subscribe to our Newsletter!"
+    },
+    {
+      "type": "h2",
+      "content": "We supply your business with fresh products"
+    },
+    {
+      "type": "p",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+    },
+    {
+      "type": "p",
+      "content": "Thank you for visiting our site!"
+    },
+    {
+      "type": "p",
+      "content": "+1 (901) 352-0047"
+    },
+    {
+      "type": "p",
+      "content": "[email protected]"
+    },
+    {
+      "type": "h5",
+      "content": "Quick Links"
+    }
+  ]
+}
