@@ -14,8 +14,8 @@ import {
   ListIcon,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaPrayingHands, FaUsers, FaLeaf, FaCow, FaCheckCircle } from 'react-icons/fa';
-import { SiOm } from 'react-icons/si';
+import { FaPrayingHands, FaUsers, FaLeaf, FaHorse, FaCheckCircle } from 'react-icons/fa';
+import { GiOm } from 'react-icons/gi';
 import Navbar from '../components/Navbar';
 
 const MotionBox = motion(Box);
@@ -141,7 +141,7 @@ export default function About() {
                   borderRadius="xl"
                   boxShadow="xl">
                   <Stack spacing={4}>
-                    <Icon as={SiOm} boxSize={10} color="purple.500" />
+                    <Icon as={GiOm} boxSize={10} color="purple.500" />
                     <Heading size="md" color="purple.600">Dharma</Heading>
                     <Text color="gray.600">
                       The eternal law that governs all existence and maintains cosmic order
@@ -270,7 +270,7 @@ export default function About() {
                   borderRadius="xl"
                   boxShadow="xl">
                   <Stack spacing={4}>
-                    <Icon as={FaCow} boxSize={10} color="purple.500" />
+                    <Icon as={FaHorse} boxSize={10} color="purple.500" />
                     <Heading size="md" color="purple.600">Gaushala</Heading>
                     <Text color="gray.600">
                       Our cow sanctuary where we protect and serve sacred cows with love and devotion
