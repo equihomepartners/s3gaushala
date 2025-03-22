@@ -1,8 +1,11 @@
-const ffmpeg = require('fluent-ffmpeg');
-const path = require('path');
+import ffmpeg from 'fluent-ffmpeg';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const inputPath = path.join(process.cwd(), 'public/videos/BGVideo4K.mp4');
-const outputPath = path.join(process.cwd(), 'public/videos/BGVideo4K-optimized.mp4');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const inputPath = join(dirname(__dirname), 'public/videos/BGVideo4K.mp4');
+const outputPath = join(dirname(__dirname), 'public/videos/BGVideo4K-optimized.mp4');
 
 console.log('Optimizing video...');
 
@@ -21,5 +24,6 @@ ffmpeg(inputPath)
   })
   .on('error', (err) => {
     console.error('Error:', err);
+    process.exit(1);
   })
   .run(); 

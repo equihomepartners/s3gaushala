@@ -1,12 +1,15 @@
-const imagemin = require('imagemin');
-const mozjpeg = require('imagemin-mozjpeg');
-const pngquant = require('imagemin-pngquant');
-const webp = require('imagemin-webp');
-const { promises: fs } = require('fs');
-const path = require('path');
+import imagemin from 'imagemin';
+import mozjpeg from 'imagemin-mozjpeg';
+import pngquant from 'imagemin-pngquant';
+import webp from 'imagemin-webp';
+import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const IMAGES_DIR = path.join(process.cwd(), 'public/images');
-const OPTIMIZED_DIR = path.join(process.cwd(), 'public/images/optimized');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const IMAGES_DIR = join(dirname(__dirname), 'public/images');
+const OPTIMIZED_DIR = join(dirname(__dirname), 'public/images/optimized');
 
 async function optimizeImages() {
   try {
