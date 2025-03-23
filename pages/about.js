@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { FaPrayingHands, FaUsers, FaLeaf, FaHorse, FaCheckCircle } from 'react-icons/fa';
-import { GiOm } from 'react-icons/gi';
+import { GiOmoo } from 'react-icons/gi';
 import Navbar from '../components/Navbar';
 
 const MotionBox = motion(Box);
@@ -141,7 +141,7 @@ export default function About() {
                   borderRadius="xl"
                   boxShadow="xl">
                   <Stack spacing={4}>
-                    <Icon as={GiOm} boxSize={10} color="purple.500" />
+                    <Icon as={GiOmoo} boxSize={10} color="purple.500" />
                     <Heading size="md" color="purple.600">Dharma</Heading>
                     <Text color="gray.600">
                       The eternal law that governs all existence and maintains cosmic order
