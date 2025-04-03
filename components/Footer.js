@@ -15,6 +15,7 @@ import {
   MenuItem,
   useColorModeValue,
   Divider,
+  Heading,
 } from '@chakra-ui/react';
 import { FaFacebook, FaInstagram, FaTwitter, FaChevronDown } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
@@ -51,19 +52,18 @@ export default function Footer() {
           {/* Quick Links */}
           <Stack spacing={4} align={{ base: 'center', lg: 'flex-start' }}>
             <Text fontWeight="600" fontSize="lg" mb={2}>Quick Links</Text>
-            <Link href="/about">About Us</Link>
-            <Link href="/events">Events</Link>
-            <Link href="/gallery">Gallery</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contact">Contact</Link>
+            <Stack spacing={4}>
+              <Heading size="sm" color="white">Quick Links</Heading>
+              <Link href="/about" color="gray.300" _hover={{ color: 'white' }}>About Us</Link>
+              <Link href="/support-us#volunteer" color="gray.300" _hover={{ color: 'white' }}>Volunteer</Link>
+              <Link href="/support-us#sponsor" color="gray.300" _hover={{ color: 'white' }}>Sponsor a Cow</Link>
+              <Link href="/support-us#donate" color="gray.300" _hover={{ color: 'white' }}>Donate</Link>
+            </Stack>
           </Stack>
 
           {/* Get Involved */}
           <Stack spacing={4} align={{ base: 'center', lg: 'flex-start' }}>
             <Text fontWeight="600" fontSize="lg" mb={2}>Get Involved</Text>
-            <Link href="/donate">Donate</Link>
-            <Link href="/sponsor">Sponsor a Cow</Link>
-            <Link href="/volunteer">Volunteer</Link>
             <Link href="/shop">Shop</Link>
           </Stack>
 
