@@ -20,7 +20,6 @@ import {
 } from '@chakra-ui/react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { FaHeart, FaHandHoldingHeart, FaUsers, FaLeaf, FaHorse, FaCalendarAlt, FaMoneyBillWave, FaHandsHelping, FaPrayingHands, FaMapMarkerAlt, FaPhone, FaEnvelope, FaArrowRight } from 'react-icons/fa';
-import { SiOm } from 'react-icons/si';
 import { GiCow } from 'react-icons/gi';
 import { getPageContent } from '../utils/content';
 import Navbar from '../components/Navbar';
@@ -40,7 +39,7 @@ const getStatIcon = (index) => {
 
 // Helper function to get icon for features
 const getFeatureIcon = (index) => {
-  const icons = [FaPrayingHands, SiOm, FaHandsHelping];
+  const icons = [FaPrayingHands, FaPrayingHands, FaHandsHelping];
   return icons[index];
 };
 
