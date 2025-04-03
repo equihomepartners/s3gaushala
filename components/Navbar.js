@@ -29,7 +29,7 @@ const MotionBox = motion(Box);
 
 const Links = ['About Us', 'Get Involved', 'Events', 'Gallery', 'Blog', 'Contact'];
 
-const NavLink = ({ children }) => (
+const NavLink = ({ children, href }) => (
   <Link
     px={2}
     py={1}
@@ -38,7 +38,7 @@ const NavLink = ({ children }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={'#'}>
+    href={href}>
     {children}
   </Link>
 );
@@ -66,7 +66,7 @@ export default function Navbar() {
           alignItems="center"
           justifyContent="space-between">
           <Flex flex={{ base: 1 }} justify={{ base: 'start', md: 'start' }}>
-            <Link href="/">
+            <Link href="/" display="flex" alignItems="center">
               <Image
                 src="/images/s3-logo.png"
                 alt="S3 Foundation Logo"
@@ -74,6 +74,16 @@ export default function Navbar() {
                 objectFit="contain"
                 py={1}
               />
+              <Text
+                ml={2}
+                fontSize={{ base: "xl", md: "2xl" }}
+                fontWeight="extrabold"
+                color="orange.400"
+                letterSpacing="tight"
+                textShadow="1px 1px 2px rgba(0,0,0,0.2)"
+                display={{ base: 'none', md: 'block' }}>
+                S3 Gaushala
+              </Text>
             </Link>
           </Flex>
 
@@ -115,11 +125,11 @@ export default function Navbar() {
                 minW="sm">
                 <Stack>
                   <Link
-                    href="#donate"
-                    role="group"
+                    href="/support-us#donate"
                     display="block"
                     p={2}
                     rounded="md"
+                    role="group"
                     _hover={{ bg: useColorModeValue('orange.50', 'gray.900') }}>
                     <Stack direction="row" align="center">
                       <Box>
@@ -144,7 +154,7 @@ export default function Navbar() {
                     </Stack>
                   </Link>
                   <Link
-                    href="#sponsor"
+                    href="/support-us#sponsor"
                     role="group"
                     display="block"
                     p={2}
@@ -173,7 +183,7 @@ export default function Navbar() {
                     </Stack>
                   </Link>
                   <Link
-                    href="#volunteer"
+                    href="/support-us#volunteer"
                     role="group"
                     display="block"
                     p={2}
@@ -391,49 +401,11 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
+    label: 'Home',
+    href: '/',
+  },
+  {
     label: 'About Us',
-    children: [
-      {
-        label: 'Our Story',
-        subLabel: 'Learn about our journey and mission',
-        href: '#',
-      },
-      {
-        label: 'Team',
-        subLabel: 'Meet the people behind S3 Gaushala',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Get Involved',
-    children: [
-      {
-        label: 'Volunteer',
-        subLabel: 'Join our community of volunteers',
-        href: '#',
-      },
-      {
-        label: 'Sponsor a Cow',
-        subLabel: 'Support our desi cows',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Events',
-    href: '#',
-  },
-  {
-    label: 'Gallery',
-    href: '#',
-  },
-  {
-    label: 'Blog',
-    href: '#',
-  },
-  {
-    label: 'Contact',
-    href: '#',
-  },
+    href: '/about',
+  }
 ]; 

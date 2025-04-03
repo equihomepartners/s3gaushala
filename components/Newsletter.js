@@ -8,6 +8,7 @@ import {
   Checkbox,
   VStack,
   Image,
+  Flex,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
@@ -15,19 +16,19 @@ const MotionBox = motion(Box);
 
 const Newsletter = () => {
   return (
-    <Box py={20} position="relative" overflow="hidden">
+    <Box py={{ base: 36, md: 40 }} position="relative" overflow="hidden">
       {/* Newsletter Section */}
-      <Container maxW="6xl" position="relative" zIndex={1}>
+      <Box position="relative" zIndex={1}>
         <Box
           position="relative"
-          borderRadius="3xl"
           overflow="hidden"
           boxShadow="2xl"
+          minH={{ base: "600px", md: "500px" }}
           _before={{
             content: '""',
             position: 'absolute',
             inset: '0',
-            background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4))',
+            background: 'linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2))',
             zIndex: 1
           }}
         >
@@ -48,19 +49,24 @@ const Newsletter = () => {
           <Box
             position="relative"
             zIndex={2}
-            p={{ base: 8, md: 16 }}
+            py={{ base: 20, md: 28 }}
+            px={{ base: 8, md: 16, lg: 24 }}
           >
-            <VStack
-              spacing={6}
-              maxW="2xl"
+            <Flex
+              direction={{ base: 'column', lg: 'row' }}
+              align="center"
+              justify="space-between"
+              maxW="8xl"
               mx="auto"
-              textAlign="center"
+              gap={{ base: 8, lg: 16 }}
             >
               <MotionBox
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                flex="1"
+                py={{ base: 6, md: 8 }}
               >
                 <Heading
                   color="white"
@@ -74,22 +80,25 @@ const Newsletter = () => {
                 </Heading>
                 <Text
                   color="white"
-                  fontSize="lg"
+                  fontSize="xl"
                   mb={8}
                   textShadow="1px 1px 2px rgba(0,0,0,0.4)"
                   opacity={0.9}
+                  maxW="2xl"
                 >
                   Join our newsletter to receive updates about our Gaushala, upcoming events, and spiritual insights
                 </Text>
               </MotionBox>
 
               <MotionBox
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.8 }}
+                flex="1"
                 w="full"
-                maxW="md"
+                maxW={{ base: "md", lg: "full" }}
+                py={{ base: 6, md: 8 }}
               >
                 <VStack spacing={4} w="full">
                   <Input
@@ -142,7 +151,7 @@ const Newsletter = () => {
                   </Button>
                 </VStack>
               </MotionBox>
-            </VStack>
+            </Flex>
           </Box>
 
           {/* Corner Decorations */}
@@ -150,8 +159,8 @@ const Newsletter = () => {
             <Box
               key={corner}
               position="absolute"
-              width="100px"
-              height="100px"
+              width="150px"
+              height="150px"
               {...{
                 'top-left': { top: 0, left: 0 },
                 'top-right': { top: 0, right: 0 },
@@ -166,7 +175,7 @@ const Newsletter = () => {
             />
           ))}
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

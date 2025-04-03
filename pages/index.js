@@ -181,8 +181,8 @@ export default function Home({ content }) {
   }, []);
 
   return (
-    <Box 
-      position="relative" 
+        <Box
+          position="relative"
       overflow="hidden"
       bg="gray.50"
       minH="100vh"
@@ -216,11 +216,11 @@ export default function Home({ content }) {
           >
             {/* Video Background */}
             <Box
-              position="absolute"
-              top={0}
-              left={0}
-              right={0}
-              bottom={0}
+            position="absolute"
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
               zIndex={0}
               overflow="hidden"
               bg="black"
@@ -236,7 +236,7 @@ export default function Home({ content }) {
                   overflow="hidden"
                   bg="black"
                 >
-                  <Image
+            <Image
                     src="/images/hero-placeholder.jpg"
                     alt="Hero background"
                     position="absolute"
@@ -284,10 +284,10 @@ export default function Home({ content }) {
               {(videoError || !isVideoPlaying) && (
                 <Image
                   src="/images/M7D_1989.jpg"
-                  alt="Hero background"
-                  objectFit="cover"
-                  w="100%"
-                  h="100%"
+              alt="Hero background"
+              objectFit="cover"
+              w="100%"
+              h="100%"
                   filter="brightness(0.8)"
                   position="absolute"
                   top={0}
@@ -300,98 +300,123 @@ export default function Home({ content }) {
 
             {/* Hero Content */}
             <Container maxW="7xl" h="100%" position="relative" zIndex={2}>
-              <Flex
-                direction="column"
-                align="center"
-                justify="center"
-                h="100%"
-                color="white"
-                textAlign="center"
-                pt={20}>
-                <MotionBox
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}>
-                  <Badge
+            <Flex
+              direction="column"
+              align="center"
+              justify="center"
+              h="100%"
+              color="white"
+              textAlign="center"
+              pt={20}>
+              <MotionBox
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}>
+                <Badge
                     colorScheme="primary"
-                    fontSize="lg"
-                    mb={6}
-                    p={2}
+                  fontSize="lg"
+                  mb={6}
+                  p={2}
                     borderRadius="full"
                     bg="primary.500"
                     color="white">
-                    Welcome to
-                  </Badge>
-                  <Heading
-                    as="h1"
-                    size="4xl"
-                    mb={6}
-                    textShadow="2px 2px 4px rgba(0,0,0,0.4)"
-                    bgGradient="linear(to-r, primary.400, accent.500)"
-                    bgClip="text"
-                    fontWeight="extrabold">
+                  Welcome to
+                </Badge>
+                <Heading
+                  as="h1"
+                  size="4xl"
+                  mb={6}
+                  textShadow="2px 2px 4px rgba(0,0,0,0.4)"
+                    color="orange.400"
+                    fontWeight="extrabold"
+                    letterSpacing="tight"
+                    fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}>
                     S3 Gaushala
-                  </Heading>
-                  <Text
-                    fontSize="2xl"
-                    mb={8}
-                    textShadow="1px 1px 2px rgba(0,0,0,0.4)"
-                    fontWeight="medium">
+                </Heading>
+                <Text
+                    fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
+                    mb={4}
+                    textShadow="2px 2px 4px rgba(0,0,0,0.4)"
+                    fontWeight="extrabold"
+                    color="white"
+                    letterSpacing="wide">
                     The Home of Desi Cows in America
-                  </Text>
-                  <Text
-                    fontSize="xl"
-                    maxW="2xl"
-                    mx="auto"
-                    mb={12}
-                    textShadow="1px 1px 2px rgba(0,0,0,0.4)"
-                    opacity={0.9}>
+                </Text>
+                <Text
+                    fontSize={{ base: "lg", md: "xl" }}
+                  maxW="2xl"
+                  mx="auto"
+                  mb={12}
+                    textShadow="2px 2px 4px rgba(0,0,0,0.4)"
+                    color="white"
+                    fontWeight="bold"
+                    letterSpacing="0.5px">
                     A sanctuary dedicated to protecting and nurturing over 200 desi cows, the largest such sanctuary in America
-                  </Text>
-                  <Stack
-                    direction={{ base: 'column', sm: 'row' }}
-                    spacing={{ base: 4, sm: 6 }}
-                    justify="center">
-                    <Button
-                      size="lg"
-                      colorScheme="primary"
-                      px={8}
-                      fontSize="md"
-                      leftIcon={<Icon as={FaHeart} />}>
-                      Donate Now
-                    </Button>
-                    <Button
-                      size="lg"
-                      colorScheme="accent"
-                      px={8}
-                      fontSize="md"
-                      leftIcon={<Icon as={FaHandHoldingHeart} />}>
-                      Sponsor a Cow
-                    </Button>
-                    <Button
-                      size="lg"
-                      colorScheme="whiteAlpha"
-                      px={8}
-                      fontSize="md"
-                      leftIcon={<Icon as={FaUsers} />}>
-                      Volunteer
-                    </Button>
-                  </Stack>
-                </MotionBox>
-              </Flex>
-            </Container>
+                </Text>
+                <Stack
+                  direction={{ base: 'column', sm: 'row' }}
+                  spacing={{ base: 4, sm: 6 }}
+                  justify="center">
+                  <Button
+                    size="lg"
+                      colorScheme="orange"
+                    px={8}
+                    fontSize="md"
+                    leftIcon={<Icon as={FaHeart} />}
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                        boxShadow: 'xl',
+                      }}
+                      transition="all 0.2s">
+                    Donate Now
+                  </Button>
+                  <Button
+                    size="lg"
+                      colorScheme="purple"
+                    px={8}
+                    fontSize="md"
+                    leftIcon={<Icon as={FaHandHoldingHeart} />}
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                        boxShadow: 'xl',
+                      }}
+                      transition="all 0.2s">
+                    Sponsor a Cow
+                  </Button>
+                  <Button
+                    size="lg"
+                      bg="green.500"
+                      color="white"
+                    px={8}
+                    fontSize="md"
+                    leftIcon={<Icon as={FaUsers} />}
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                        boxShadow: 'xl',
+                        bg: 'green.600',
+                      }}
+                      _active={{
+                        bg: 'green.700',
+                      }}
+                      transition="all 0.2s">
+                    Volunteer
+                  </Button>
+                </Stack>
+              </MotionBox>
+            </Flex>
+          </Container>
           </MotionBox>
         )}
       </AnimatePresence>
 
       {/* Mission Section with Features */}
-      <MotionBox 
+            <MotionBox
         ref={missionRef}
         py={20} 
         position="relative"
         marginTop="100vh"
         bg="gray.50"
-        initial={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
         animate={{ 
           opacity: isMissionInView ? 1 : 0,
           y: isMissionInView ? 0 : 100
@@ -483,7 +508,7 @@ export default function Home({ content }) {
                   </MotionBox>
                 ))}
               </SimpleGrid>
-            </Box>
+        </Box>
 
             <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} w="full">
               {[
@@ -506,20 +531,20 @@ export default function Home({ content }) {
                   color: "green.500"
                 }
               ].map((feature, index) => (
-                <MotionBox
+            <MotionBox
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}>
-                  <Box
-                    bg="white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.2 }}>
+                      <Box
+                        bg="white"
                     borderRadius="2xl"
                     overflow="hidden"
                     boxShadow="xl"
-                    position="relative"
-                    _hover={{
-                      transform: 'translateY(-4px)',
+                        position="relative"
+                        _hover={{
+                          transform: 'translateY(-4px)',
                       boxShadow: '2xl',
                       transition: 'all 0.3s ease',
                     }}>
@@ -534,34 +559,34 @@ export default function Home({ content }) {
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       />
-                      <Box
-                        position="absolute"
+                        <Box
+                          position="absolute"
                         inset={0}
                         bg="blackAlpha.400"
                         transition="all 0.3s"
                         opacity={0}
                         _groupHover={{ opacity: 1 }}
                       />
-                    </Box>
+                        </Box>
                     <Box p={8}>
-                      <Heading
-                        size="md"
+                          <Heading
+                            size="md"
                         mb={4}
                         color={feature.color}>
-                        {feature.title}
-                      </Heading>
-                      <Text
-                        color="gray.600"
+                            {feature.title}
+                          </Heading>
+                          <Text
+                            color="gray.600"
                         fontSize="lg">
-                        {feature.description}
-                      </Text>
+                            {feature.description}
+                          </Text>
                     </Box>
-                  </Box>
-                </MotionBox>
-              ))}
-            </SimpleGrid>
-          </Stack>
-        </Container>
+                      </Box>
+                    </MotionBox>
+                  ))}
+                </SimpleGrid>
+              </Stack>
+          </Container>
       </MotionBox>
 
       {/* Remaining sections container */}
@@ -652,15 +677,15 @@ export default function Home({ content }) {
                     Nourish to Flourish
                   </Heading>
                 </MotionBox>
-              </Box>
+        </Box>
 
               {/* Feed Types Grid */}
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={12} position="relative">
                 {/* Hay Bales */}
-                <MotionBox
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+            <MotionBox
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
                   position="relative"
                   zIndex={1}>
                   <Box
@@ -698,16 +723,16 @@ export default function Home({ content }) {
                       _hover={{
                         background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 100%)"
                       }}>
-                      <Heading
+                  <Heading
                         color="white"
-                        size="2xl"
+                    size="2xl"
                         textAlign="center"
                         textShadow="2px 2px 4px rgba(0,0,0,0.5)"
                         mb={4}
                         letterSpacing="wide">
                         Hay Bales
-                      </Heading>
-                      <Text
+                  </Heading>
+                  <Text
                         color="white"
                         fontSize="lg"
                         textAlign="center"
@@ -715,35 +740,35 @@ export default function Home({ content }) {
                         textShadow="1px 1px 2px rgba(0,0,0,0.5)"
                         opacity={0.9}>
                         Premium quality hay bales sourced from local farms, providing essential fiber and nutrients
-                      </Text>
-                    </Box>
+                  </Text>
+                </Box>
                   </Box>
                 </MotionBox>
 
                 {/* Pellet Feed */}
-                <MotionBox
+                    <MotionBox
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                      viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                   position="relative"
                   zIndex={1}>
-                  <Box
+                      <Box
                     position="relative"
                     height="500px"
-                    overflow="hidden"
+                        overflow="hidden"
                     borderRadius="2xl"
-                    boxShadow="xl"
+                        boxShadow="xl"
                     transition="all 0.5s ease"
-                    _hover={{
+                        _hover={{
                       transform: "scale(1.02)",
                       boxShadow: "2xl",
                     }}>
                     <MotionImage
                       src="/images/pellet-feed.jpg"
                       alt="Pellet Feed"
-                      objectFit="cover"
-                      w="100%"
+                          objectFit="cover"
+                          w="100%"
                       h="100%"
                       initial={{ scale: 1 }}
                       whileHover={{ scale: 1.1 }}
@@ -763,28 +788,28 @@ export default function Home({ content }) {
                       _hover={{
                         background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 100%)"
                       }}>
-                      <Heading
+                          <Heading
                         color="white"
                         size="2xl"
                         textAlign="center"
                         textShadow="2px 2px 4px rgba(0,0,0,0.5)"
-                        mb={4}
+                            mb={4}
                         letterSpacing="wide">
                         Pellet Feed
-                      </Heading>
-                      <Text
+                          </Heading>
+                          <Text
                         color="white"
-                        fontSize="lg"
+                            fontSize="lg"
                         textAlign="center"
                         maxW="md"
                         textShadow="1px 1px 2px rgba(0,0,0,0.5)"
                         opacity={0.9}>
                         Nutritionally balanced pellet feed formulated specifically for our desi cows
-                      </Text>
-                    </Box>
-                  </Box>
-                </MotionBox>
-              </SimpleGrid>
+                          </Text>
+                        </Box>
+                      </Box>
+                    </MotionBox>
+                </SimpleGrid>
 
               {/* Sponsorship Call to Action */}
               <Box
@@ -795,12 +820,12 @@ export default function Home({ content }) {
                 textAlign="center"
                 position="relative"
                 overflow="hidden"
-                _hover={{
+                    _hover={{
                   boxShadow: "2xl",
                   transform: "translateY(-4px)",
                   transition: "all 0.3s ease"
                 }}>
-                <MotionBox
+            <MotionBox
                   position="absolute"
                   top="-50%"
                   left="-20%"
@@ -823,46 +848,46 @@ export default function Home({ content }) {
                 />
                 <Stack spacing={8} position="relative" zIndex={1}>
                   <VStack spacing={4}>
-                    <Heading
-                      size="2xl"
+                  <Heading
+                    size="2xl"
                       bgGradient="linear(to-r, orange.500, yellow.500)"
                       bgClip="text"
                       letterSpacing="tight"
                       lineHeight="1.2">
                       Feed Our Entire Gir Cow Family
-                    </Heading>
-                    <Text
-                      fontSize="xl"
-                      color="gray.600"
+                  </Heading>
+                  <Text
+                    fontSize="xl"
+                    color="gray.600"
                       maxW="3xl"
                       mx="auto"
                       lineHeight="tall">
                       It takes $351 to feed our entire family of 200+ Gir cows for one day. Make a meaningful impact by sponsoring a full day of nourishment.
-                    </Text>
-                    <Text
-                      fontSize="lg"
+                  </Text>
+                      <Text
+                        fontSize="lg"
                       color="gray.500"
                       fontStyle="italic">
                       Honor your special occasions by providing a day of care for our sacred cows
-                    </Text>
+                      </Text>
                   </VStack>
-                  <Button
-                    size="lg"
+                    <Button
+                      size="lg"
                     colorScheme="orange"
                     px={12}
                     py={8}
                     fontSize="xl"
                     borderRadius="full"
                     bgGradient="linear(to-r, orange.500, yellow.500)"
-                    _hover={{
+                      _hover={{
                       bgGradient: "linear(to-r, orange.600, yellow.600)",
-                      transform: 'translateY(-2px)',
+                        transform: 'translateY(-2px)',
                       boxShadow: 'xl',
-                    }}>
+                      }}>
                     SPONSOR A DAY OF NOURISHMENT
-                  </Button>
-                </Stack>
-              </Box>
+                    </Button>
+                  </Stack>
+                </Box>
 
               {/* Support Options Grid */}
               <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} position="relative">
@@ -900,19 +925,19 @@ export default function Home({ content }) {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 }}>
                     <Box
-                      position="relative"
+                  position="relative"
                       height="400px"
-                      overflow="hidden"
+                  overflow="hidden"
                       cursor="pointer"
                       borderRadius={option.borderRadius}
                       transition="all 0.5s ease"
                       _hover={{
                         transform: "scale(1.02)",
                       }}>
-                      <MotionImage
+                  <MotionImage
                         src={option.image}
                         alt={option.title}
-                        objectFit="cover"
+                    objectFit="cover"
                         w="100%"
                         h="100%"
                         initial={{ scale: 1 }}
@@ -920,8 +945,8 @@ export default function Home({ content }) {
                         transition={{ duration: 0.5 }}
                       />
                       {/* Content Container */}
-                      <Box
-                        position="absolute"
+                  <Box
+                    position="absolute"
                         inset={0}
                         background="linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%)"
                         display="flex"
@@ -971,9 +996,9 @@ export default function Home({ content }) {
                           }}>
                           {option.cta}
                         </Button>
-                      </Box>
+                </Box>
                     </Box>
-                  </MotionBox>
+            </MotionBox>
                 ))}
               </SimpleGrid>
             </Stack>
@@ -1000,71 +1025,71 @@ export default function Home({ content }) {
           <BlogSectionBackground />
           <Container maxW="7xl" position="relative" zIndex={1}>
             <Stack spacing={16}>
-              <Box textAlign="center">
-                <Badge
+                <Box textAlign="center">
+                  <Badge
                   colorScheme="primary"
-                  fontSize="md"
-                  mb={4}
+                    fontSize="md"
+                    mb={4}
                   p={3}
                   borderRadius="full"
                   bg="primary.500"
                   color="white"
                   boxShadow="lg">
-                  Latest Updates
-                </Badge>
-                <Heading
-                  mb={6}
-                  size="2xl"
+                    Latest Updates
+                  </Badge>
+                  <Heading
+                    mb={6}
+                    size="2xl"
                   bgGradient="linear(to-r, primary.500, accent.500)"
                   bgClip="text"
                   letterSpacing="tight">
                   Spiritual Insights & Stories
-                </Heading>
-                <Text
-                  fontSize="xl"
-                  color="gray.600"
-                  maxW="3xl"
+                  </Heading>
+                  <Text
+                    fontSize="xl"
+                    color="gray.600"
+                    maxW="3xl"
                   mx="auto"
                   lineHeight="tall">
                   Discover the profound wisdom and heartwarming stories from our sacred sanctuary
-                </Text>
-              </Box>
+                  </Text>
+                </Box>
 
               <SimpleGrid
                 columns={{ base: 1, md: 2, lg: 3 }}
                 spacing={10}
                 px={{ base: 4, lg: 0 }}>
-                {[
-                  {
-                    title: "Why Gau Seva?",
-                    description: "Many people wonder why do we have to serve Gau Mata. Discover the profound spiritual significance of cow protection in Hindu tradition.",
+                    {[
+                      {
+                        title: "Why Gau Seva?",
+                        description: "Many people wonder why do we have to serve Gau Mata. Discover the profound spiritual significance of cow protection in Hindu tradition.",
                     image: "/images/Gaushala_May15_2019-0567.jpg",
                     category: "Spirituality"
-                  },
-                  {
-                    title: "Cow – The Worshipable Animal",
-                    description: "Learn about the divine qualities of cows and why they hold such a sacred position in Vedic culture.",
-                    image: "/images/Gaushala_May15_2019-0554.jpg",
+                      },
+                      {
+                        title: "Cow – The Worshipable Animal",
+                        description: "Learn about the divine qualities of cows and why they hold such a sacred position in Vedic culture.",
+                    image: "/images/Gaushala_May15_2019-0516.jpg",
                     category: "Culture"
-                  },
-                  {
-                    title: "Sadhbuddhi: Path to Happiness",
-                    description: "Understanding how serving cows helps develop divine qualities and leads to spiritual advancement.",
-                    image: "/images/Gaushala_May15_2019-0534.jpg",
+                      },
+                      {
+                        title: "Sadhbuddhi: Path to Happiness",
+                        description: "Understanding how serving cows helps develop divine qualities and leads to spiritual advancement.",
+                    image: "/images/Gaushala_May15_2019-0554.jpg",
                     category: "Wisdom"
-                  }
-                ].map((post, index) => (
+                      }
+                    ].map((post, index) => (
                   <MotionBox
-                    key={index}
+                        key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 }}
                     whileHover={{ y: -8 }}>
                     <Box
-                      bg="white"
+                        bg="white"
                       borderRadius="3xl"
-                      overflow="hidden"
+                        overflow="hidden"
                       boxShadow="xl"
                       height="full"
                       position="relative">
@@ -1094,19 +1119,19 @@ export default function Home({ content }) {
                         </Box>
                       </Box>
                       <Box p={8}>
-                        <Heading
+                          <Heading
                           size="lg"
                           mb={4}
                           color="gray.800"
                           lineHeight="tight">
-                          {post.title}
-                        </Heading>
-                        <Text
-                          color="gray.600"
+                            {post.title}
+                          </Heading>
+                          <Text
+                            color="gray.600"
                           mb={6}
                           lineHeight="tall">
-                          {post.description}
-                        </Text>
+                            {post.description}
+                          </Text>
                         <MotionBox
                           display="inline-block"
                           whileHover={{ x: 4 }}
@@ -1124,13 +1149,13 @@ export default function Home({ content }) {
                             Read More
                           </Button>
                         </MotionBox>
+                        </Box>
                       </Box>
-                    </Box>
                   </MotionBox>
                 ))}
               </SimpleGrid>
 
-              <Box textAlign="center">
+                <Box textAlign="center">
                 <MotionBox
                   display="inline-block"
                   whileHover={{ scale: 1.05 }}
@@ -1153,8 +1178,8 @@ export default function Home({ content }) {
                     Explore All Stories
                   </Button>
                 </MotionBox>
-              </Box>
-            </Stack>
+                </Box>
+              </Stack>
           </Container>
         </Box>
 
@@ -1175,7 +1200,7 @@ export async function getStaticProps() {
       content,
     },
   };
-}
+} 
 
 // Update Mission Section Background for better visibility
 const MissionSectionBackground = () => (
