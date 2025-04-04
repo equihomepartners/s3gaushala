@@ -27,9 +27,10 @@ import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import { useState, useEffect, useRef } from 'react';
 
-const MotionBox = motion.create(Box);
-const MotionFlex = motion.create(Flex);
-const MotionImage = motion.create(Image);
+// Update the motion components
+const MotionBox = motion(Box);
+const MotionFlex = motion(Flex);
+const MotionImage = motion(Image);
 
 // Helper function to get icon for stats
 const getStatIcon = (index) => {
