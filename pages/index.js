@@ -39,7 +39,7 @@ const getStatIcon = (index) => {
 
 // Helper function to get icon for features
 const getFeatureIcon = (index) => {
-  const icons = [FaPrayingHands, FaPrayingHands, FaHandsHelping];
+  const icons = [FaPrayingHands, GiCow, FaHandsHelping];
   return icons[index];
 };
 
@@ -198,213 +198,225 @@ export default function Home({ content }) {
       <BackgroundShapes />
       <Navbar />
 
-      {/* Hero Section */}
-      <Box 
-        position="relative" 
-        height={{ base: "90vh", md: "90vh" }}
-        overflow="hidden"
-        bg="black"
-      >
-        {/* Video Background */}
-        <Box
-          position="absolute"
-          top={0}
-          left={0}
-          right={0}
-          bottom={0}
-          overflow="hidden"
-          zIndex={1}
-        >
-          {!videoError && (
+      {/* Hero Section with AnimatePresence */}
+      <AnimatePresence>
+        {!isMissionInView && (
+          <MotionBox
+            as="section"
+            position="fixed"
+            height="100vh"
+            width="100%"
+            top={0}
+            left={0}
+            zIndex={1}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Video Background */}
             <Box
-              position="absolute"
-              top={0}
-              left={0}
-              right={0}
-              bottom={0}
+            position="absolute"
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
               zIndex={0}
               overflow="hidden"
               bg="black"
             >
-              <Image
-                src="/images/hero-placeholder.jpg"
-                alt="Hero background"
-                position="absolute"
-                top={0}
-                left={0}
-                width="100%"
-                height="100%"
-                objectFit="cover"
-                filter="brightness(0.8)"
-                style={{ opacity: isVideoPlaying ? 0 : 1 }}
-                transition="opacity 0.5s ease"
-              />
-              <video
-                ref={videoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  filter: 'brightness(0.8)',
-                  opacity: isVideoPlaying ? 1 : 0,
-                  transition: 'opacity 0.5s ease',
-                }}
-                poster="/images/hero-placeholder.jpg"
-                onPlay={handleVideoPlay}
-                onError={handleVideoError}
-                onLoadedData={handleVideoLoadedData}
-                onLoadStart={handleVideoLoadStart}
-                onWaiting={handleVideoWaiting}
-              >
-                <source 
-                  src="/videos/BGVideo3.mp4" 
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-          )}
-
-          {/* Show fallback image when video fails or hasn't started playing */}
-          {(videoError || !isVideoPlaying) && (
+              {!videoError && (
+                <Box
+                  position="absolute"
+                  top={0}
+                  left={0}
+                  right={0}
+                  bottom={0}
+                  zIndex={0}
+                  overflow="hidden"
+                  bg="black"
+                >
             <Image
-              src="/images/M7D_1989.jpg"
+                    src="/images/hero-placeholder.jpg"
+                    alt="Hero background"
+                    position="absolute"
+                    top={0}
+                    left={0}
+                    width="100%"
+                    height="100%"
+                    objectFit="cover"
+                    filter="brightness(0.8)"
+                    style={{ opacity: isVideoPlaying ? 0 : 1 }}
+                    transition="opacity 0.5s ease"
+                  />
+                  <video
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      filter: 'brightness(0.8)',
+                      opacity: isVideoPlaying ? 1 : 0,
+                      transition: 'opacity 0.5s ease',
+                    }}
+                    poster="/images/hero-placeholder.jpg"
+                    onPlay={handleVideoPlay}
+                    onError={handleVideoError}
+                    onLoadedData={handleVideoLoadedData}
+                    onLoadStart={handleVideoLoadStart}
+                    onWaiting={handleVideoWaiting}
+                  >
+                    <source 
+                      src="/videos/BGVideo3.mp4" 
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </Box>
+              )}
+
+              {/* Show fallback image when video fails or hasn't started playing */}
+              {(videoError || !isVideoPlaying) && (
+                <Image
+                  src="/images/M7D_1989.jpg"
               alt="Hero background"
               objectFit="cover"
               w="100%"
               h="100%"
-              filter="brightness(0.8)"
-              position="absolute"
-              top={0}
-              left={0}
-              right={0}
-              bottom={0}
-            />
-          )}
-        </Box>
+                  filter="brightness(0.8)"
+                  position="absolute"
+                  top={0}
+                  left={0}
+                  right={0}
+                  bottom={0}
+                />
+              )}
+            </Box>
 
-        {/* Hero Content */}
-        <Container maxW="7xl" h="100%" position="relative" zIndex={2}>
-          <Flex
-            direction="column"
-            align="center"
-            justify="center"
-            h="100%"
-            color="white"
-            textAlign="center"
-            pt={20}>
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}>
-              <Badge
-                  colorScheme="primary"
-                fontSize="lg"
-                mb={6}
-                p={2}
-                  borderRadius="full"
-                  bg="primary.500"
-                  color="white">
-                Welcome to
-              </Badge>
-              <Heading
-                as="h1"
-                size="4xl"
-                mb={6}
-                textShadow="2px 2px 4px rgba(0,0,0,0.4)"
-                  color="orange.400"
-                  fontWeight="extrabold"
-                  letterSpacing="tight"
-                  fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}>
-                  S3 Gaushala
-              </Heading>
-              <Text
-                  fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
-                  mb={4}
+            {/* Hero Content */}
+            <Container maxW="7xl" h="100%" position="relative" zIndex={2}>
+            <Flex
+              direction="column"
+              align="center"
+              justify="center"
+              h="100%"
+              color="white"
+              textAlign="center"
+              pt={20}>
+              <MotionBox
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}>
+                <Badge
+                    colorScheme="primary"
+                  fontSize="lg"
+                  mb={6}
+                  p={2}
+                    borderRadius="full"
+                    bg="primary.500"
+                    color="white">
+                  Welcome to
+                </Badge>
+                <Heading
+                  as="h1"
+                  size="4xl"
+                  mb={6}
                   textShadow="2px 2px 4px rgba(0,0,0,0.4)"
-                  fontWeight="extrabold"
-                  color="white"
-                  letterSpacing="wide">
-                  The Home of Desi Cows in America
-              </Text>
-              <Text
-                  fontSize={{ base: "lg", md: "xl" }}
-                maxW="2xl"
-                mx="auto"
-                mb={12}
-                  textShadow="2px 2px 4px rgba(0,0,0,0.4)"
-                  color="white"
-                  fontWeight="bold"
-                  letterSpacing="0.5px">
-                  A sanctuary dedicated to protecting and nurturing over 200 desi cows, the largest such sanctuary in America
-              </Text>
-              <Stack
-                direction={{ base: 'column', sm: 'row' }}
-                spacing={{ base: 4, sm: 6 }}
-                justify="center">
-                <Button
-                  size="lg"
-                    colorScheme="orange"
-                  px={8}
-                  fontSize="md"
-                  leftIcon={<Icon as={FaHeart} />}
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                      boxShadow: 'xl',
-                    }}
-                    transition="all 0.2s">
-                  Donate Now
-                </Button>
-                <Button
-                  size="lg"
-                    colorScheme="purple"
-                  px={8}
-                  fontSize="md"
-                  leftIcon={<Icon as={FaHandHoldingHeart} />}
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                      boxShadow: 'xl',
-                    }}
-                    transition="all 0.2s">
-                  Sponsor a Cow
-                </Button>
-                <Button
-                  size="lg"
-                    bg="green.500"
+                    color="orange.400"
+                    fontWeight="extrabold"
+                    letterSpacing="tight"
+                    fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}>
+                    S3 Gaushala
+                </Heading>
+                <Text
+                    fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
+                    mb={4}
+                    textShadow="2px 2px 4px rgba(0,0,0,0.4)"
+                    fontWeight="extrabold"
                     color="white"
-                  px={8}
-                  fontSize="md"
-                  leftIcon={<Icon as={FaUsers} />}
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                      boxShadow: 'xl',
-                      bg: 'green.600',
-                    }}
-                    _active={{
-                      bg: 'green.700',
-                    }}
-                    transition="all 0.2s">
-                  Volunteer
-                </Button>
-              </Stack>
-            </MotionBox>
-          </Flex>
-        </Container>
-      </Box>
+                    letterSpacing="wide">
+                    The Home of Desi Cows in America
+                </Text>
+                <Text
+                    fontSize={{ base: "lg", md: "xl" }}
+                  maxW="2xl"
+                  mx="auto"
+                  mb={12}
+                    textShadow="2px 2px 4px rgba(0,0,0,0.4)"
+                    color="white"
+                    fontWeight="bold"
+                    letterSpacing="0.5px">
+                    A sanctuary dedicated to protecting and nurturing over 200 desi cows, the largest such sanctuary in America
+                </Text>
+                <Stack
+                  direction={{ base: 'column', sm: 'row' }}
+                  spacing={{ base: 4, sm: 6 }}
+                  justify="center">
+                  <Button
+                    size="lg"
+                      colorScheme="orange"
+                    px={8}
+                    fontSize="md"
+                    leftIcon={<Icon as={FaHeart} />}
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                        boxShadow: 'xl',
+                      }}
+                      transition="all 0.2s">
+                    Donate Now
+                  </Button>
+                  <Button
+                    size="lg"
+                      colorScheme="purple"
+                    px={8}
+                    fontSize="md"
+                    leftIcon={<Icon as={FaHandHoldingHeart} />}
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                        boxShadow: 'xl',
+                      }}
+                      transition="all 0.2s">
+                    Sponsor a Cow
+                  </Button>
+                  <Button
+                    size="lg"
+                      bg="green.500"
+                      color="white"
+                    px={8}
+                    fontSize="md"
+                    leftIcon={<Icon as={FaUsers} />}
+                    _hover={{
+                      transform: 'translateY(-2px)',
+                        boxShadow: 'xl',
+                        bg: 'green.600',
+                      }}
+                      _active={{
+                        bg: 'green.700',
+                      }}
+                      transition="all 0.2s">
+                    Volunteer
+                  </Button>
+                </Stack>
+              </MotionBox>
+            </Flex>
+          </Container>
+          </MotionBox>
+        )}
+      </AnimatePresence>
 
       {/* Mission Section with Features */}
-      <MotionBox
+            <MotionBox
         ref={missionRef}
         py={20} 
         position="relative"
         marginTop="100vh"
         bg="gray.50"
-        initial={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
         animate={{ 
           opacity: isMissionInView ? 1 : 0,
           y: isMissionInView ? 0 : 100
@@ -415,157 +427,8 @@ export default function Home({ content }) {
         }}
         zIndex={2}
       >
-        {/* Video Background */}
-        <Box
-          position="absolute"
-          top={0}
-          left={0}
-          right={0}
-          bottom={0}
-          overflow="hidden"
-          zIndex={1}
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              opacity: 0.7
-            }}
-          >
-            <source src="/videos/BGVideo3.mp4" type="video/mp4" />
-          </video>
-          <Box
-            position="absolute"
-            inset={0}
-            bg="blackAlpha.600"
-            backdropFilter="blur(2px)"
-          />
-        </Box>
-
-        <Container maxW="7xl" h="100%" position="relative" zIndex={2}>
-          <Flex
-            direction="column"
-            align="center"
-            justify="center"
-            h="100%"
-            color="white"
-            textAlign="center"
-            pt={20}
-          >
-            <MotionBox
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <Badge
-                colorScheme="primary"
-                fontSize="lg"
-                mb={6}
-                p={2}
-                borderRadius="full"
-                bg="primary.500"
-                color="white"
-              >
-                Welcome to
-              </Badge>
-              <Heading
-                as="h1"
-                size="4xl"
-                mb={6}
-                textShadow="2px 2px 4px rgba(0,0,0,0.4)"
-                color="orange.400"
-                fontWeight="extrabold"
-                letterSpacing="tight"
-                fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
-              >
-                S3 Gaushala
-              </Heading>
-              <Text
-                fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
-                mb={4}
-                textShadow="2px 2px 4px rgba(0,0,0,0.4)"
-                fontWeight="extrabold"
-                color="white"
-                letterSpacing="wide"
-              >
-                The Home of Desi Cows in America
-              </Text>
-              <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                maxW="2xl"
-                mx="auto"
-                mb={12}
-                textShadow="2px 2px 4px rgba(0,0,0,0.4)"
-                color="white"
-                fontWeight="bold"
-                letterSpacing="0.5px"
-              >
-                A sanctuary dedicated to protecting and nurturing over 200 desi cows, the largest such sanctuary in America
-              </Text>
-              <Stack
-                direction={{ base: 'column', sm: 'row' }}
-                spacing={{ base: 4, sm: 6 }}
-                justify="center"
-              >
-                <Button
-                  size="lg"
-                  colorScheme="orange"
-                  px={8}
-                  fontSize="md"
-                  leftIcon={<Icon as={FaHeart} />}
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                    boxShadow: 'xl',
-                  }}
-                  transition="all 0.2s"
-                >
-                  Donate Now
-                </Button>
-                <Button
-                  size="lg"
-                  colorScheme="purple"
-                  px={8}
-                  fontSize="md"
-                  leftIcon={<Icon as={FaHandHoldingHeart} />}
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                    boxShadow: 'xl',
-                  }}
-                  transition="all 0.2s"
-                >
-                  Sponsor a Cow
-                </Button>
-              </Stack>
-            </MotionBox>
-          </Flex>
-        </Container>
-      </MotionBox>
-
-      {/* Features Section */}
-      <Box 
-        py={20} 
-        bg="white"
-        position="relative"
-        marginTop="-20vh"
-        _before={{
-          content: '""',
-          position: 'absolute',
-          top: '-100px',
-          left: 0,
-          right: 0,
-          height: '200px',
-          bgGradient: 'linear(to-b, black, white)',
-          opacity: 0.1,
-          zIndex: 1,
-          pointerEvents: 'none'
-        }}
-      >
-        <Container maxW="7xl" position="relative" zIndex={2}>
+        <MissionSectionBackground />
+        <Container maxW="7xl" position="relative" zIndex={1}>
           <Stack spacing={12} align="center">
             <Box textAlign="center" maxW="3xl" mx="auto">
               <Badge
@@ -724,7 +587,7 @@ export default function Home({ content }) {
                 </SimpleGrid>
               </Stack>
           </Container>
-      </Box>
+      </MotionBox>
 
       {/* Remaining sections container */}
       <Box 
