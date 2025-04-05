@@ -105,7 +105,7 @@ export async function getStaticPaths() {
   try {
     const slugs = await getAllSlugs();
     const paths = slugs
-      .filter(slug => slug !== 'main') // Exclude main from dynamic routes
+      .filter(slug => !['main', 'shop'].includes(slug)) // Exclude main and shop from dynamic routes
       .map(slug => ({
         params: { slug },
       }));

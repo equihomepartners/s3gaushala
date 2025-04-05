@@ -70,13 +70,13 @@ export default function Navbar() {
               <Image
                 src="/images/s3-logo.png"
                 alt="S3 Foundation Logo"
-                h={{ base: "70px", md: "80px" }}
+                h={{ base: "75px", md: "85px" }}
                 objectFit="contain"
                 py={1}
               />
               <Text
                 ml={2}
-                fontSize={{ base: "xl", md: "2xl" }}
+                fontSize={{ base: "2xl", md: "3xl" }}
                 fontWeight="extrabold"
                 color="orange.400"
                 letterSpacing="tight"
@@ -304,5 +304,9 @@ const NAV_ITEMS = [
   {
     label: 'About Us',
     href: '/about',
-  }
+  },
+  {
+    label: 'Shop',
+    href: '/shop',
+  },
 ]; 

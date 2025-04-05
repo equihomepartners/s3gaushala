@@ -7,6 +7,9 @@ import {
   VStack,
   Badge,
   Divider,
+  HStack,
+  Flex,
+  Circle,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
@@ -119,41 +122,209 @@ export default function About() {
         </Container>
       </Box>
 
-      {/* Sacred Heritage Section */}
+      {/* What is S3 Foundation Section */}
+      <Box py={20} bg="gray.50">
+        <Container maxW="6xl">
+          <VStack spacing={12} align="stretch">
+            <Box textAlign="center">
+              <Text
+                fontSize="lg"
+                color="gray.600"
+                mb={4}
+              >
+                S3 Foundation is a nonprofit organization founded by University of Memphis students in 2005
+              </Text>
+              <Heading
+                size="2xl"
+                mb={8}
+                color="gray.800"
+              >
+                What is the S3 Foundation?
+              </Heading>
+              <Text
+                fontSize="xl"
+                color="gray.700"
+                maxW="3xl"
+                mx="auto"
+                mb={12}
+              >
+                S3 Foundation exists to uplift society through individual development.
+              </Text>
+            </Box>
+
+            <Box>
+              <Text
+                fontSize="xl"
+                color="gray.700"
+                mb={8}
+              >
+                As Sanatana Dharma explains:
+              </Text>
+
+              <Box position="relative" mb={16}>
+                <Flex justify="space-between" align="center" maxW="4xl" mx="auto">
+                  <Box
+                    bg="purple.500"
+                    color="white"
+                    p={4}
+                    borderRadius="lg"
+                    textAlign="center"
+                    width="200px"
+                  >
+                    <Text fontSize="xl" fontWeight="bold">Vyakthi Nirman</Text>
+                    <Text fontSize="md">(Individual Growth)</Text>
+                  </Box>
+
+                  <Flex align="center" flex="1" maxW="150px" position="relative">
+                    <Box
+                      position="absolute"
+                      top="50%"
+                      left={0}
+                      right={0}
+                      height="2px"
+                      bg="gray.300"
+                      transform="translateY(-50%)"
+                    />
+                    <Circle
+                      size="32px"
+                      bg="gray.300"
+                      color="gray.600"
+                      position="absolute"
+                      left="50%"
+                      transform="translateX(-50%)"
+                    >
+                      →
+                    </Circle>
+                  </Flex>
+
+                  <Box
+                    bg="purple.500"
+                    color="white"
+                    p={4}
+                    borderRadius="lg"
+                    textAlign="center"
+                    width="200px"
+                  >
+                    <Text fontSize="xl" fontWeight="bold">Kutumb Nirman</Text>
+                    <Text fontSize="md">(Family Growth)</Text>
+                  </Box>
+
+                  <Flex align="center" flex="1" maxW="150px" position="relative">
+                    <Box
+                      position="absolute"
+                      top="50%"
+                      left={0}
+                      right={0}
+                      height="2px"
+                      bg="gray.300"
+                      transform="translateY(-50%)"
+                    />
+                    <Circle
+                      size="32px"
+                      bg="gray.300"
+                      color="gray.600"
+                      position="absolute"
+                      left="50%"
+                      transform="translateX(-50%)"
+                    >
+                      →
+                    </Circle>
+                  </Flex>
+
+                  <Box
+                    bg="purple.500"
+                    color="white"
+                    p={4}
+                    borderRadius="lg"
+                    textAlign="center"
+                    width="200px"
+                  >
+                    <Text fontSize="xl" fontWeight="bold">Samaj Nirman</Text>
+                    <Text fontSize="md">(Societal Growth)</Text>
+                  </Box>
+                </Flex>
+              </Box>
+
+              <Box textAlign="center">
+                <Heading size="xl" mb={8} color="gray.800">
+                  How do we achieve this?
+                </Heading>
+                <VStack spacing={4} align="center" maxW="md" mx="auto">
+                  <HStack spacing={3}>
+                    <Circle size="3" bg="orange.400" />
+                    <Text fontSize="lg" color="gray.700">Seva (Volunteering)</Text>
+                  </HStack>
+                  <HStack spacing={3}>
+                    <Circle size="3" bg="orange.400" />
+                    <Text fontSize="lg" color="gray.700">Sadhana (Spiritual Practice)</Text>
+                  </HStack>
+                  <HStack spacing={3}>
+                    <Circle size="3" bg="orange.400" />
+                    <Text fontSize="lg" color="gray.700">Satsang (Spiritual Discussion)</Text>
+                  </HStack>
+                </VStack>
+              </Box>
+            </Box>
+          </VStack>
+        </Container>
+      </Box>
+
+      {/* Mission Section */}
       <Box py={20} bg="gray.50">
         <Container maxW="6xl">
           <VStack spacing={12} align="stretch">
             <VStack spacing={6} textAlign="center">
-              <Badge colorScheme="orange" p={2} fontSize="md">Divine Connection</Badge>
-              <Heading size="xl">Gau Mata: The Eternal Nurturer</Heading>
+              <Heading size="xl">The Mission of S3 Foundation</Heading>
               <Text fontSize="lg" color="gray.600" maxW="3xl" mx="auto" lineHeight="tall">
-                Since ancient times, the cow has been at the heart of Sanatana Dharma.
-                The Rigveda calls her a gift from the Gods.
-                The Atharvaveda reveals she carries 33 crore Devi-Devtas.
-                She is worshipped as Kamadhenu, the wish-fulfilling divine mother.
+                To emphasize and guide people worldwide into a spiritual synergistic relationship with Body, Mind and Soul.
+              </Text>
+              <Text fontSize="lg" color="gray.600" maxW="3xl" mx="auto" lineHeight="tall">
+                All our activities follow the Sanathana principles of Dharma, Adhibhouthika, Adhyvika and Adhyatmika.
               </Text>
             </VStack>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-              <Box>
-                <VStack align="start" spacing={6}>
-                  <Heading size="lg">Sacred Heritage</Heading>
-                  <Text fontSize="lg" color="gray.600" lineHeight="tall">
-                    Just as the human spine has 33 vertebrae, she carries 33 crore divine energies, one reflects the other.
-                    The Charaka Samhita calls her touch a medicine.
-                    The Mahabharata promises her service washes away sins.
-                    The Garuda Purana says serving her brings peace and liberation.
-                  </Text>
-                </VStack>
-              </Box>
               <Box position="relative" height="400px">
                 <NextImage
                   src="/images/Gaushala_May15_2019-0557.jpg"
-                  alt="Divine Connection"
+                  alt="Mission Image"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'cover', borderRadius: '50%' }}
                   quality={90}
                 />
+                <Box
+                  position="absolute"
+                  top="-20px"
+                  right="-20px"
+                  width="80px"
+                  height="80px"
+                >
+                  <svg viewBox="0 0 100 100">
+                    <path
+                      d="M 50 0 L 60 40 L 100 50 L 60 60 L 50 100 L 40 60 L 0 50 L 40 40 Z"
+                      fill="orange.400"
+                    />
+                  </svg>
+                </Box>
+              </Box>
+              <Box>
+                <VStack align="start" spacing={8}>
+                  <Heading size="lg">Our Current Projects:</Heading>
+                  <VStack align="start" spacing={4}>
+                    <HStack spacing={3}>
+                      <Box as="span" color="orange.400" fontSize="xl">▶</Box>
+                      <Text fontSize="lg" color="gray.700">Gaushala (Cow Sanctuary)</Text>
+                    </HStack>
+                    <HStack spacing={3}>
+                      <Box as="span" color="orange.400" fontSize="xl">▶</Box>
+                      <Text fontSize="lg" color="gray.700">Vedic Farming</Text>
+                    </HStack>
+                    <HStack spacing={3}>
+                      <Box as="span" color="orange.400" fontSize="xl">▶</Box>
+                      <Text fontSize="lg" color="gray.700">Divya Jananam (Divine Birth)</Text>
+                    </HStack>
+                  </VStack>
+                </VStack>
               </Box>
             </SimpleGrid>
           </VStack>

@@ -8,16 +8,10 @@ import {
   VStack,
   Icon,
   Link,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
   useColorModeValue,
   Divider,
-  Heading,
 } from '@chakra-ui/react';
-import { FaFacebook, FaInstagram, FaTwitter, FaChevronDown } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 export default function Footer() {
@@ -49,22 +43,13 @@ export default function Footer() {
             </Text>
           </VStack>
 
-          {/* Quick Links */}
+          {/* Navigation Links */}
           <Stack spacing={4} align={{ base: 'center', lg: 'flex-start' }}>
-            <Text fontWeight="600" fontSize="lg" mb={2}>Quick Links</Text>
-            <Stack spacing={4}>
-              <Heading size="sm" color="white">Quick Links</Heading>
-              <Link href="/about" color="gray.300" _hover={{ color: 'white' }}>About Us</Link>
-              <Link href="/support-us#volunteer" color="gray.300" _hover={{ color: 'white' }}>Volunteer</Link>
-              <Link href="/support-us#sponsor" color="gray.300" _hover={{ color: 'white' }}>Sponsor a Cow</Link>
-              <Link href="/support-us#donate" color="gray.300" _hover={{ color: 'white' }}>Donate</Link>
-            </Stack>
-          </Stack>
-
-          {/* Get Involved */}
-          <Stack spacing={4} align={{ base: 'center', lg: 'flex-start' }}>
-            <Text fontWeight="600" fontSize="lg" mb={2}>Get Involved</Text>
-            <Link href="/shop">Shop</Link>
+            <Text fontWeight="600" fontSize="lg" mb={2}>Navigation</Text>
+            <Link href="/" color={useColorModeValue('gray.600', 'gray.400')} _hover={{ color: useColorModeValue('orange.500', 'orange.300') }}>Home</Link>
+            <Link href="/about" color={useColorModeValue('gray.600', 'gray.400')} _hover={{ color: useColorModeValue('orange.500', 'orange.300') }}>About Us</Link>
+            <Link href="/shop" color={useColorModeValue('gray.600', 'gray.400')} _hover={{ color: useColorModeValue('orange.500', 'orange.300') }}>Shop</Link>
+            <Link href="/support-us" color={useColorModeValue('gray.600', 'gray.400')} _hover={{ color: useColorModeValue('orange.500', 'orange.300') }}>Support Us</Link>
           </Stack>
 
           {/* Contact Info */}
