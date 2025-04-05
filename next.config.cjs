@@ -9,6 +9,8 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     domains: ['s3gaushala.netlify.app', 'localhost'],
     unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.js',
   },
   compress: true,
   poweredByHeader: false,
@@ -16,6 +18,7 @@ const nextConfig = {
   swcMinify: true,
   output: 'export',
   trailingSlash: true,
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://s3gaushala.netlify.app' : '',
 }
 
 module.exports = nextConfig 

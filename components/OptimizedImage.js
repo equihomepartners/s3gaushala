@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { Box } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react'
+import NextImage from 'next/image'
 
 const shimmer = (w, h) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -21,37 +21,32 @@ const toBase64 = (str) =>
     ? Buffer.from(str).toString('base64')
     : window.btoa(str);
 
-const OptimizedImage = ({
-  src,
-  alt,
-  width,
-  height,
-  priority = false,
-  quality = 75,
-  objectFit = 'cover',
-  ...props
-}) => {
-  const blurDataURL = `data:image/svg+xml;base64,${toBase64(shimmer(width || 700, height || 475))}`;
+const OptimizedImage = ({ src, alt, ...props }) => {
+  const isProduction = process.env.NODE_ENV === 'production'
+  const imageSrc = isProduction ? src : `/images/${src}`
 
   return (
     <Box position="relative" overflow="hidden" {...props}>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        priority={priority}
-        quality={quality}
-        placeholder="blur"
-        blurDataURL={blurDataURL}
-        style={{
-          objectFit,
-          width: '100%',
-          height: '100%',
-        }}
-      />
+      {isProduction ? (
+        <Image
+          src={imageSrc}
+          alt={alt}
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          loading="lazy"
+        />
+      ) : (
+        <NextImage
+          src={imageSrc}
+          alt={alt}
+          fill
+          style={{ objectFit: 'cover' }}
+          loading="lazy"
+        />
+      )}
     </Box>
-  );
-};
+  )
+}
 
-export default OptimizedImage;
+export default OptimizedImage

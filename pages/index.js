@@ -345,13 +345,18 @@ export default function Home({ content }) {
                 <Heading
                   as="h1"
                   size="4xl"
-                  mb={6}
-                  textShadow="2px 2px 4px rgba(0,0,0,0.4)"
-                    color="orange.400"
-                    fontWeight="extrabold"
-                    letterSpacing="tight"
-                    fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}>
-                    S3 Gaushala
+                  fontWeight="black"
+                  color="orange.400"
+                  textShadow="0 0 10px rgba(237, 137, 54, 0.5), 2px 2px 4px rgba(0,0,0,0.5)"
+                  mb={4}
+                  letterSpacing="tight"
+                  fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
+                  _hover={{
+                    color: "orange.300",
+                    textShadow: "0 0 15px rgba(237, 137, 54, 0.7), 3px 3px 6px rgba(0,0,0,0.6)"
+                  }}
+                  transition="all 0.3s ease">
+                  S3 Gaushala
                 </Heading>
                 <Text
                     fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
