@@ -126,10 +126,10 @@ export default function Navbar() {
                 <Stack>
                   <Link
                     href="/support-us#donate"
+                    role="group"
                     display="block"
                     p={2}
                     rounded="md"
-                    role="group"
                     _hover={{ bg: useColorModeValue('orange.50', 'gray.900') }}>
                     <Stack direction="row" align="center">
                       <Box>

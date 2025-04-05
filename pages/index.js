@@ -26,11 +26,12 @@ import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import { useState, useEffect, useRef } from 'react';
+import NextImage from 'next/image';
 
 // Update the motion components
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
-const MotionImage = motion(Image);
+const MotionNextImage = motion(NextImage);
 
 // Helper function to get icon for stats
 const getStatIcon = (index) => {
@@ -237,26 +238,37 @@ export default function Home({ content }) {
                   overflow="hidden"
                   bg="black"
                 >
-            <Image
-                    src="/images/hero-placeholder.jpg"
-                    alt="Hero background"
-                    position="absolute"
-                    top={0}
-                    left={0}
+            <Box
+                    position="relative"
                     width="100%"
                     height="100%"
-                    objectFit="cover"
-                    filter="brightness(0.8)"
-                    style={{ opacity: isVideoPlaying ? 0 : 1 }}
-                    transition="opacity 0.5s ease"
-                  />
+                  >
+                    <NextImage
+                      src="/images/hero-placeholder.jpg"
+                      alt="Hero background"
+                      width={1920}
+                      height={1080}
+                      priority={true}
+                      quality={90}
+                      style={{ 
+                        objectFit: 'cover',
+                        opacity: isVideoPlaying ? 0 : 1,
+                        width: '100%',
+                        height: '100%',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                      }}
+                      className="transition-opacity duration-500"
+                    />
+                  </Box>
                   <video
                     ref={videoRef}
                     autoPlay
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     style={{
                       width: '100%',
                       height: '100%',
@@ -264,6 +276,9 @@ export default function Home({ content }) {
                       filter: 'brightness(0.8)',
                       opacity: isVideoPlaying ? 1 : 0,
                       transition: 'opacity 0.5s ease',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
                     }}
                     poster="/images/hero-placeholder.jpg"
                     onPlay={handleVideoPlay}
@@ -283,18 +298,22 @@ export default function Home({ content }) {
 
               {/* Show fallback image when video fails or hasn't started playing */}
               {(videoError || !isVideoPlaying) && (
-                <Image
+                <NextImage
                   src="/images/M7D_1989.jpg"
-              alt="Hero background"
-              objectFit="cover"
-              w="100%"
-              h="100%"
-                  filter="brightness(0.8)"
-                  position="absolute"
-                  top={0}
-                  left={0}
-                  right={0}
-                  bottom={0}
+                  alt="Hero background"
+                  width={1920}
+                  height={1080}
+                  priority={true}
+                  quality={90}
+                  style={{ 
+                    objectFit: 'cover',
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    filter: 'brightness(0.8)',
+                  }}
                 />
               )}
             </Box>
@@ -550,13 +569,19 @@ export default function Home({ content }) {
                       transition: 'all 0.3s ease',
                     }}>
                     <Box position="relative" height="240px" overflow="hidden">
-                      <MotionImage
+                      <MotionNextImage
                         src={feature.image}
                         alt={feature.title}
-                        objectFit="cover"
-                        w="100%"
-                        h="100%"
-                        initial={{ scale: 1 }}
+                        width={400}
+                        height={240}
+                        quality={85}
+                        priority={index === 0}
+                        style={{ 
+                          objectFit: 'cover',
+                          width: '100%',
+                          height: '100%',
+                        }}
+                        animate={{ scale: 1 }}
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       />
@@ -700,12 +725,18 @@ export default function Home({ content }) {
                       transform: "scale(1.02)",
                       boxShadow: "2xl",
                     }}>
-                    <MotionImage
+                    <MotionNextImage
                       src="/images/hay-feed.jpg"
                       alt="Hay Bales"
-                      objectFit="cover"
-                      w="100%"
-                      h="100%"
+                      width={1920}
+                      height={1080}
+                      quality={85}
+                      priority={true}
+                      style={{ 
+                        objectFit: 'cover',
+                        width: '100%',
+                        height: '100%',
+                      }}
                       initial={{ scale: 1 }}
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -765,12 +796,18 @@ export default function Home({ content }) {
                       transform: "scale(1.02)",
                       boxShadow: "2xl",
                     }}>
-                    <MotionImage
+                    <MotionNextImage
                       src="/images/pellet-feed.jpg"
                       alt="Pellet Feed"
-                          objectFit="cover"
-                          w="100%"
-                      h="100%"
+                      width={1920}
+                      height={1080}
+                      quality={85}
+                      priority={true}
+                      style={{ 
+                        objectFit: 'cover',
+                        width: '100%',
+                        height: '100%',
+                      }}
                       initial={{ scale: 1 }}
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.5 }}
@@ -935,16 +972,22 @@ export default function Home({ content }) {
                       _hover={{
                         transform: "scale(1.02)",
                       }}>
-                  <MotionImage
+                  <MotionNextImage
                         src={option.image}
                         alt={option.title}
-                    objectFit="cover"
-                        w="100%"
-                        h="100%"
-                        initial={{ scale: 1 }}
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.5 }}
-                      />
+                    width={800}
+                    height={600}
+                    quality={85}
+                    priority={index === 0}
+                    style={{ 
+                      objectFit: 'cover',
+                      width: '100%',
+                      height: '100%',
+                    }}
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                  />
                       {/* Content Container */}
                   <Box
                     position="absolute"
@@ -1095,13 +1138,19 @@ export default function Home({ content }) {
                       height="full"
                       position="relative">
                       <Box position="relative" height="250px" overflow="hidden">
-                        <MotionImage
+                        <MotionNextImage
                           src={post.image}
                           alt={post.title}
-                          objectFit="cover"
-                          w="full"
-                          h="full"
-                          initial={{ scale: 1 }}
+                          width={400}
+                          height={240}
+                          quality={85}
+                          priority={index === 0}
+                          style={{ 
+                            objectFit: 'cover',
+                            width: '100%',
+                            height: '100%',
+                          }}
+                          animate={{ scale: 1 }}
                           whileHover={{ scale: 1.1 }}
                           transition={{ duration: 0.3 }}
                         />
