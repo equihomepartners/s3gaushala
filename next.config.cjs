@@ -7,11 +7,15 @@ const nextConfig = {
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    domains: ['s3gaushala.netlify.app', 'localhost'],
+    unoptimized: true,
   },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 

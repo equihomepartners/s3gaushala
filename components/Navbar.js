@@ -96,124 +96,21 @@ export default function Navbar() {
             justify="flex-end"
             direction="row"
             spacing={6}>
-            <Popover trigger="hover" placement="bottom-end">
-              <PopoverTrigger>
-                <Button
-                  as="a"
-                  display={{ base: 'none', md: 'inline-flex' }}
-                  fontSize="sm"
-                  fontWeight={600}
-                  color="white"
-                  bg="primary.500"
-                  px={6}
-                  h="45px"
-                  rightIcon={<ChevronDownIcon />}
-                  _hover={{
-                    bg: 'primary.600',
-                    transform: 'translateY(-2px)',
-                    boxShadow: 'lg',
-                  }}>
-                  Get Involved
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent
-                border={0}
-                boxShadow="xl"
-                bg={useColorModeValue('white', 'gray.800')}
-                p={4}
-                rounded="xl"
-                minW="sm">
-                <Stack>
-                  <Link
-                    href="/support-us#donate"
-                    role="group"
-                    display="block"
-                    p={2}
-                    rounded="md"
-                    _hover={{ bg: useColorModeValue('orange.50', 'gray.900') }}>
-                    <Stack direction="row" align="center">
-                      <Box>
-                        <Text
-                          transition="all .3s ease"
-                          _groupHover={{ color: 'orange.500' }}
-                          fontWeight={500}>
-                          Donate Now
-                        </Text>
-                        <Text fontSize="sm" color="gray.500">Support our mission</Text>
-                      </Box>
-                      <Flex
-                        transition="all .3s ease"
-                        transform="translateX(-10px)"
-                        opacity={0}
-                        _groupHover={{ opacity: 1, transform: 'translateX(0)' }}
-                        justify="flex-end"
-                        align="center"
-                        flex={1}>
-                        <Icon color="orange.500" w={5} h={5} as={ChevronRightIcon} />
-                      </Flex>
-                    </Stack>
-                  </Link>
-                  <Link
-                    href="/support-us#sponsor"
-                    role="group"
-                    display="block"
-                    p={2}
-                    rounded="md"
-                    _hover={{ bg: useColorModeValue('purple.50', 'gray.900') }}>
-                    <Stack direction="row" align="center">
-                      <Box>
-                        <Text
-                          transition="all .3s ease"
-                          _groupHover={{ color: 'purple.500' }}
-                          fontWeight={500}>
-                          Sponsor a Cow
-                        </Text>
-                        <Text fontSize="sm" color="gray.500">Make a lasting impact</Text>
-                      </Box>
-                      <Flex
-                        transition="all .3s ease"
-                        transform="translateX(-10px)"
-                        opacity={0}
-                        _groupHover={{ opacity: 1, transform: 'translateX(0)' }}
-                        justify="flex-end"
-                        align="center"
-                        flex={1}>
-                        <Icon color="purple.500" w={5} h={5} as={ChevronRightIcon} />
-                      </Flex>
-                    </Stack>
-                  </Link>
-                  <Link
-                    href="/support-us#volunteer"
-                    role="group"
-                    display="block"
-                    p={2}
-                    rounded="md"
-                    _hover={{ bg: useColorModeValue('green.50', 'gray.900') }}>
-                    <Stack direction="row" align="center">
-                      <Box>
-                        <Text
-                          transition="all .3s ease"
-                          _groupHover={{ color: 'green.500' }}
-                          fontWeight={500}>
-                          Volunteer
-                        </Text>
-                        <Text fontSize="sm" color="gray.500">Join our community</Text>
-                      </Box>
-                      <Flex
-                        transition="all .3s ease"
-                        transform="translateX(-10px)"
-                        opacity={0}
-                        _groupHover={{ opacity: 1, transform: 'translateX(0)' }}
-                        justify="flex-end"
-                        align="center"
-                        flex={1}>
-                        <Icon color="green.500" w={5} h={5} as={ChevronRightIcon} />
-                      </Flex>
-                    </Stack>
-                  </Link>
-                </Stack>
-              </PopoverContent>
-            </Popover>
+            <Button
+              as={Link}
+              href="/support-us"
+              colorScheme="orange"
+              size="md"
+              rounded="full"
+              px={6}
+              _hover={{
+                transform: 'translateY(-2px)',
+                boxShadow: 'lg',
+              }}
+              transition="all 0.3s"
+            >
+              Support Us
+            </Button>
           </Stack>
 
           <Flex

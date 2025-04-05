@@ -25,7 +25,7 @@ import { motion } from 'framer-motion';
 import { FaLongArrowAltRight, FaArrowDown, FaHandHoldingHeart, FaDonate, FaPaw } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
@@ -131,6 +131,20 @@ export default function SupportUs() {
       isClosable: true,
     });
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.getElementById(hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, []);
 
   return (
     <Box>
